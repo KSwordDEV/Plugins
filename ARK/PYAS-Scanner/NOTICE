@@ -1,0 +1,9 @@
+PE File Analysis plugin
+
+This plugin is adapted from the user-provided Properties.zip package. The
+original source, model, feature list, attribution, and license remain under
+the 87owo Publicly Available Source Code License Agreement in LICENSE.txt.
+
+KSword-specific changes only add the standalone command-line plugin contract:
+plugin.json metadata and scanner.py's --ksword-plugin JSON Lines mode. They do
+not transfer ownership of the original scanner or model assets.

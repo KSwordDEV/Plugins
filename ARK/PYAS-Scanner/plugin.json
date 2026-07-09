@@ -1,0 +1,28 @@
+{
+  "ksword_plugin_api": "1",
+  "id": "file-analysis",
+  "name": "PYAS Scanner",
+  "version": "1.0.0",
+  "description": "Classifies PE files with the bundled ONNX model and emits JSON Lines when launched by KSword.",
+  "runtime": "python",
+  "entrypoint": "scanner.py",
+  "default_command": "scan",
+  "targets": [
+    "file",
+    "process"
+  ],
+  "commands": [
+    {
+      "name": "scan",
+      "description": "Scan one or more PE files or directories.",
+      "syntax": "--target-kind file --path PATH | --target-kind process --pid PID --path IMAGE_PATH [--process-name NAME]"
+    },
+    {
+      "name": "info",
+      "description": "Print the plugin's protocol capabilities as JSON Lines."
+    }
+  ],
+  "requirements": "requirements.txt",
+  "license": "LICENSE.txt",
+  "notice": "NOTICE"
+}
