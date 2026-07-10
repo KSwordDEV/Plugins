@@ -2,15 +2,90 @@
   "ksword_plugin_api": "1",
   "id": "file-analysis",
   "name": "PYAS Scanner",
-  "version": "1.0.0",
-  "description": "Classifies PE files with the bundled ONNX model and emits JSON Lines when launched by KSword.",
-  "runtime": "python",
-  "entrypoint": "scanner.py",
+  "version": "1.1.0",
+  "description": "Classifies PE files with the bundled ONNX model and provides structured scan results in KSword.",
+  "runtime": "executable",
+  "entrypoint": "scanner.exe",
   "default_command": "scan",
   "targets": [
     "file",
     "process"
   ],
+  "visualization": {
+    "type": "scan-table",
+    "title": "PYAS PE 安全扫描",
+    "start_event": "scan_started",
+    "result_event": "file_result",
+    "complete_event": "scan_complete",
+    "total_field": "total_files",
+    "columns": [
+      {
+        "field": "result",
+        "label": "判定",
+        "format": "badge",
+        "values": {
+          "safe": {
+            "label": "安全",
+            "tone": "success"
+          },
+          "malware": {
+            "label": "恶意",
+            "tone": "danger"
+          },
+          "unsupported": {
+            "label": "不支持",
+            "tone": "muted"
+          },
+          "error": {
+            "label": "错误",
+            "tone": "warning"
+          }
+        }
+      },
+      {
+        "field": "probability",
+        "label": "恶意概率",
+        "format": "percent"
+      },
+      {
+        "field": "path",
+        "label": "文件路径",
+        "format": "path"
+      },
+      {
+        "field": "message",
+        "label": "详情",
+        "format": "text"
+      }
+    ],
+    "summary": [
+      {
+        "field": "total",
+        "label": "总计",
+        "format": "integer"
+      },
+      {
+        "field": "safe",
+        "label": "安全",
+        "format": "integer"
+      },
+      {
+        "field": "malware",
+        "label": "恶意",
+        "format": "integer"
+      },
+      {
+        "field": "unsupported",
+        "label": "不支持",
+        "format": "integer"
+      },
+      {
+        "field": "errors",
+        "label": "错误",
+        "format": "integer"
+      }
+    ]
+  },
   "commands": [
     {
       "name": "scan",
@@ -23,6 +98,7 @@
     }
   ],
   "requirements": "requirements.txt",
+  "source": "scanner.py",
   "license": "LICENSE.txt",
   "notice": "NOTICE"
 }

@@ -4,8 +4,8 @@
     {
       "id": "file-analysis",
       "name": "PYAS Scanner",
-      "version": "1.0.0",
-      "description": "Classifies PE files with the bundled ONNX model.",
+      "version": "1.1.0",
+      "description": "Standalone EXE that classifies PE files and provides structured scan results.",
       "targets": [
         "file",
         "process"
@@ -13,7 +13,7 @@
       "repository_path": "ARK/PYAS-Scanner",
       "install_directory": "file-analysis",
       "archive_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/main/ARK/PYAS-Scanner/PYAS-Scanner.zip",
-      "sha256": "01F1071BEF3FECC4BBBD3D7608E6765BBC01952F43A4468790B1A03C1B0E10FE",
+      "sha256": "105CEB1B041F8AA49BDC5B402C5E21BE1147856CFF8E685DEB0C69DA6604769C",
       "license_name": "87owo Publicly Available Source Code License Agreement",
       "license_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/main/ARK/PYAS-Scanner/LICENSE.txt"
     }

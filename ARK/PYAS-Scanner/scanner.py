@@ -409,7 +409,7 @@ class FeatureExtractor:
             base['SizeOfOptionalHeader'] = getattr(fh, 'SizeOfOptionalHeader', 0)
             base['Characteristics'] = getattr(fh, 'Characteristics', 0)
 
-            curr_ts = datetime.datetime.utcnow().timestamp()
+            curr_ts = datetime.datetime.now(datetime.timezone.utc).timestamp()
             base['HasInvalidTimestamp'] = 1.0 if (base['TimeDateStamp'] < 631152000 or base['TimeDateStamp'] > curr_ts + 2592000) else 0.0
             base['FileTimeException'] = 1.0 if base['TimeDateStamp'] == 0 else 0.0
             base['Is64Bit'] = 1.0 if base['Machine'] in (0x8664, 0xAA64, 0x0200) else 0.0
@@ -671,7 +671,7 @@ class ModelPredictor:
 
 PLUGIN_PROTOCOL = "ksword-plugin/1"
 PLUGIN_ID = "file-analysis"
-PLUGIN_VERSION = "1.0.0"
+PLUGIN_VERSION = "1.1.0"
 
 
 def emit_plugin_event(event, **payload):
@@ -915,7 +915,7 @@ def run_plugin_mode(arguments):
     if command_arguments[:1] in (["--help"], ["-h"]):
         emit_plugin_event(
             "usage",
-            syntax="scanner.py --ksword-plugin scan -- --target-kind file --path PATH | --target-kind process --pid PID --path IMAGE_PATH [--process-name NAME]",
+            syntax="<entrypoint> --ksword-plugin scan -- --target-kind file --path PATH | --target-kind process --pid PID --path IMAGE_PATH [--process-name NAME]",
             message="Scans a file, or the executable image supplied with a process context, and emits JSON Lines results.",
         )
         return 0
