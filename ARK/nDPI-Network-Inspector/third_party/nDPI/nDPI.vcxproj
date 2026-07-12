@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64"><Configuration>Debug</Configuration><Platform>x64</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{92E2252E-A3C7-47ED-9D10-6FBB1178A0D1}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>nDPI</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType><UseDebugLibraries>true</UseDebugLibraries><PlatformToolset>v143</PlatformToolset><CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType><UseDebugLibraries>false</UseDebugLibraries><PlatformToolset>v143</PlatformToolset><WholeProgramOptimization>false</WholeProgramOptimization><CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup><OutDir>$(ProjectDir)x64\$(Configuration)\</OutDir><IntDir>$(ProjectDir)x64\$(Configuration)\obj\</IntDir><TargetName>nDPI</TargetName></PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)ksword_windows;$(ProjectDir)windows\src;$(ProjectDir)src\lib;$(ProjectDir)src\include;$(ProjectDir)src\lib\third_party\include;$(ProjectDir)ksword_bridge;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USE_OLD_ROARING;NDPI_LIB_COMPILATION;WIN32;_WIN64;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary><WarningLevel>Level3</WarningLevel><LanguageStandard_C>stdc17</LanguageStandard_C><MultiProcessorCompilation>true</MultiProcessorCompilation><DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4013;4090;4100;4127;4146;4244;4267;4334;4701;4703;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)ksword_windows;$(ProjectDir)windows\src;$(ProjectDir)src\lib;$(ProjectDir)src\include;$(ProjectDir)src\lib\third_party\include;$(ProjectDir)ksword_bridge;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USE_OLD_ROARING;NDPI_LIB_COMPILATION;WIN32;_WIN64;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary><Optimization>MaxSpeed</Optimization><FunctionLevelLinking>true</FunctionLevelLinking><IntrinsicFunctions>true</IntrinsicFunctions><WarningLevel>Level3</WarningLevel><LanguageStandard_C>stdc17</LanguageStandard_C><MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4013;4090;4100;4127;4146;4244;4267;4334;4701;4703;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib><LinkTimeCodeGeneration>false</LinkTimeCodeGeneration></Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\lib\*.c" />
+    <ClCompile Include="src\lib\protocols\*.c" />
+    <ClCompile Include="src\lib\third_party\src\*.c" />
+    <ClCompile Include="src\lib\third_party\src\hll\*.c" />
+    <ClCompile Include="src\lib\third_party\src\windows\gettimeofday.c" />
+    <ClCompile Include="ksword_bridge\ksword_ndpi_bridge.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ksword_bridge\ksword_ndpi_bridge.h" /><ClInclude Include="ksword_windows\pthread.h" /><ClInclude Include="src\include\*.h" /><ClInclude Include="src\lib\third_party\include\*.h" />
+  </ItemGroup>
+  <ItemGroup><None Include="LICENSE.txt" /><None Include="NOTICE.md" /><None Include="README_KSWORD.md" /><None Include="README_UPSTREAM.md" /></ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

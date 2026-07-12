@@ -1,0 +1,9 @@
+nDPI Network Inspector 1.0.0
+
+This plugin contains nDPI 5.0 from https://github.com/ntop/nDPI at commit
+375f99ef9fb4999d778b57bbeece171b3fa9fba6.
+
+nDPI is Copyright 2011-2025 ntop.org and nDPI contributors and is licensed
+under the GNU Lesser General Public License version 3 or later. The complete
+license is included as LICENSE.txt. KSword-specific integration code is kept in
+src/ and third_party/nDPI/ksword_bridge/.

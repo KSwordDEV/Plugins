@@ -16,6 +16,21 @@
       "sha256": "105CEB1B041F8AA49BDC5B402C5E21BE1147856CFF8E685DEB0C69DA6604769C",
       "license_name": "87owo Publicly Available Source Code License Agreement",
       "license_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/main/ARK/PYAS-Scanner/LICENSE.txt"
+    },
+    {
+      "id": "ndpi-network-inspector",
+      "name": "nDPI Network Inspector",
+      "version": "1.0.0",
+      "description": "Standalone x64 network capture process that classifies live IPv4 TCP/UDP flows with nDPI 5.0.",
+      "targets": [
+        "network"
+      ],
+      "repository_path": "ARK/nDPI-Network-Inspector",
+      "install_directory": "ndpi-network-inspector",
+      "archive_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/main/ARK/nDPI-Network-Inspector/nDPI-Network-Inspector.zip",
+      "sha256": "C90EE2CF175825DA6806EEE50F6217808007461EB7C1DFFF85F0A522EF7C9AA7",
+      "license_name": "GNU Lesser General Public License v3.0 or later",
+      "license_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/main/ARK/nDPI-Network-Inspector/LICENSE.txt"
     }
   ]
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files"><UniqueIdentifier>{941FC34F-D4A9-4B8A-B508-F88B2B9A4133}</UniqueIdentifier><Extensions>cpp;c</Extensions></Filter>
+    <Filter Include="Header Files"><UniqueIdentifier>{63EB0978-B602-4C80-A4D8-A79C0AE74EED}</UniqueIdentifier><Extensions>h;hpp</Extensions></Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp"><Filter>Source Files</Filter></ClCompile>
+    <ClCompile Include="src\ndpi_classifier.cpp"><Filter>Source Files</Filter></ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ndpi_classifier.h"><Filter>Header Files</Filter></ClInclude>
+  </ItemGroup>
+</Project>

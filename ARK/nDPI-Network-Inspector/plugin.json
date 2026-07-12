@@ -1,0 +1,104 @@
+{
+  "ksword_plugin_api": "1",
+  "id": "ndpi-network-inspector",
+  "name": "nDPI Network Inspector",
+  "version": "1.0.0",
+  "description": "Classifies live IPv4 TCP/UDP flows with nDPI in an isolated capture process.",
+  "runtime": "executable",
+  "entrypoint": "ndpi-network-inspector.exe",
+  "default_command": "capture",
+  "targets": [
+    "network"
+  ],
+  "visualization": {
+    "type": "scan-table",
+    "title": "nDPI 流量识别",
+    "start_event": "capture_started",
+    "result_event": "flow_result",
+    "complete_event": "capture_complete",
+    "total_field": "total_flows",
+    "columns": [
+      {
+        "field": "status",
+        "label": "状态",
+        "format": "badge",
+        "values": {
+          "classified": {
+            "label": "已识别",
+            "tone": "success"
+          }
+        }
+      },
+      {
+        "field": "application",
+        "label": "应用协议",
+        "format": "text"
+      },
+      {
+        "field": "category",
+        "label": "分类",
+        "format": "text"
+      },
+      {
+        "field": "transport",
+        "label": "传输层",
+        "format": "text"
+      },
+      {
+        "field": "source",
+        "label": "源端点",
+        "format": "text"
+      },
+      {
+        "field": "destination",
+        "label": "目标端点",
+        "format": "text"
+      },
+      {
+        "field": "breed",
+        "label": "Breed",
+        "format": "text"
+      },
+      {
+        "field": "protocol_ids",
+        "label": "协议 ID",
+        "format": "text"
+      }
+    ],
+    "summary": [
+      {
+        "field": "packets",
+        "label": "报文",
+        "format": "integer"
+      },
+      {
+        "field": "flows",
+        "label": "已识别流",
+        "format": "integer"
+      },
+      {
+        "field": "errors",
+        "label": "接收错误",
+        "format": "integer"
+      }
+    ]
+  },
+  "commands": [
+    {
+      "name": "capture",
+      "description": "Capture and classify live IPv4 traffic.",
+      "syntax": "--target-kind network [--interface IPV4] [--duration 1..3600]"
+    },
+    {
+      "name": "info",
+      "description": "Print protocol capabilities as JSON Lines."
+    },
+    {
+      "name": "selftest",
+      "description": "Classify a built-in DNS packet without opening a capture socket."
+    }
+  ],
+  "source": "src/main.cpp",
+  "license": "LICENSE.txt",
+  "notice": "NOTICE"
+}

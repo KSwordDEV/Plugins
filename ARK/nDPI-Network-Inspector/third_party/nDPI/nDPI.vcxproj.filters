@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="nDPI Source">
+      <UniqueIdentifier>{338D53D5-CB4C-49D8-BCE1-D9C53524C2FD}</UniqueIdentifier>
+      <Extensions>c</Extensions>
+    </Filter>
+    <Filter Include="nDPI Headers">
+      <UniqueIdentifier>{948A6F5C-C39F-45FB-9184-D9492BC68A40}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="KSword Bridge">
+      <UniqueIdentifier>{A3F2F846-A38A-4C27-B6D7-47B4F5D97FBB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Documentation">
+      <UniqueIdentifier>{C17598CB-D2D7-48E9-8808-22E636BDE154}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\lib\*.c"><Filter>nDPI Source</Filter></ClCompile>
+    <ClCompile Include="src\lib\protocols\*.c"><Filter>nDPI Source</Filter></ClCompile>
+    <ClCompile Include="src\lib\third_party\src\*.c"><Filter>nDPI Source</Filter></ClCompile>
+    <ClCompile Include="src\lib\third_party\src\hll\*.c"><Filter>nDPI Source</Filter></ClCompile>
+    <ClCompile Include="src\lib\third_party\src\windows\gettimeofday.c"><Filter>nDPI Source</Filter></ClCompile>
+    <ClCompile Include="ksword_bridge\ksword_ndpi_bridge.c"><Filter>KSword Bridge</Filter></ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\include\*.h"><Filter>nDPI Headers</Filter></ClInclude>
+    <ClInclude Include="src\lib\third_party\include\*.h"><Filter>nDPI Headers</Filter></ClInclude>
+    <ClInclude Include="ksword_windows\pthread.h"><Filter>KSword Bridge</Filter></ClInclude>
+    <ClInclude Include="ksword_bridge\ksword_ndpi_bridge.h"><Filter>KSword Bridge</Filter></ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LICENSE.txt"><Filter>Documentation</Filter></None>
+    <None Include="NOTICE.md"><Filter>Documentation</Filter></None>
+    <None Include="README_KSWORD.md"><Filter>Documentation</Filter></None>
+    <None Include="README_UPSTREAM.md"><Filter>Documentation</Filter></None>
+  </ItemGroup>
+</Project>
