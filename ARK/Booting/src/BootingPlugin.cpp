@@ -13,6 +13,9 @@
 #include <bcrypt.h>
 #include <shlobj.h>
 #include <shellapi.h>
+#include <uxtheme.h>
+
+#pragma comment(lib, "uxtheme.lib")
 
 #include <algorithm>
 #include <array>
@@ -133,6 +136,23 @@ fs::path g_selectedImage;
 int g_scrollPos{};
 bool g_busy{};
 
+struct PluginTheme {
+    bool dark{};
+    COLORREF window{RGB(243, 246, 250)};
+    COLORREF surface{RGB(255, 255, 255)};
+    COLORREF surfaceAlt{RGB(238, 243, 248)};
+    COLORREF textPrimary{RGB(24, 34, 46)};
+    COLORREF textSecondary{RGB(77, 91, 108)};
+    COLORREF border{RGB(190, 201, 214)};
+    COLORREF accent{RGB(37, 139, 230)};
+    COLORREF onAccent{RGB(255, 255, 255)};
+    HBRUSH windowBrush{};
+    HBRUSH surfaceBrush{};
+    HBRUSH surfaceAltBrush{};
+};
+
+PluginTheme g_theme;
+
 std::wstring FormatWin32Error(DWORD code) {
     wchar_t* raw = nullptr;
     const DWORD flags = FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM |
@@ -175,6 +195,57 @@ std::wstring Lower(std::wstring value) {
     return value;
 }
 
+std::wstring EnvironmentValue(const wchar_t* name) {
+    const DWORD required = GetEnvironmentVariableW(name, nullptr, 0);
+    if (required <= 1) return {};
+    std::wstring value(required - 1, L'\0');
+    GetEnvironmentVariableW(name, value.data(), required);
+    return value;
+}
+
+COLORREF ParseEnvironmentColor(const wchar_t* name, COLORREF fallback) {
+    const std::wstring value = EnvironmentValue(name);
+    if (value.size() != 7 || value.front() != L'#') return fallback;
+    wchar_t* end = nullptr;
+    const unsigned long rgb = wcstoul(value.c_str() + 1, &end, 16);
+    if (!end || *end != L'\0') return fallback;
+    return RGB((rgb >> 16) & 0xff, (rgb >> 8) & 0xff, rgb & 0xff);
+}
+
+void InitializeTheme() {
+    g_theme.dark = Lower(EnvironmentValue(L"KSWORD_PLUGIN_THEME")) == L"dark";
+    if (g_theme.dark) {
+        g_theme.window = RGB(13, 23, 34);
+        g_theme.surface = RGB(16, 28, 41);
+        g_theme.surfaceAlt = RGB(20, 36, 52);
+        g_theme.textPrimary = RGB(232, 240, 248);
+        g_theme.textSecondary = RGB(167, 184, 201);
+        g_theme.border = RGB(54, 79, 103);
+        g_theme.accent = RGB(54, 151, 241);
+    }
+    g_theme.window = ParseEnvironmentColor(L"KSWORD_PLUGIN_COLOR_WINDOW", g_theme.window);
+    g_theme.surface = ParseEnvironmentColor(L"KSWORD_PLUGIN_COLOR_SURFACE", g_theme.surface);
+    g_theme.surfaceAlt =
+        ParseEnvironmentColor(L"KSWORD_PLUGIN_COLOR_SURFACE_ALT", g_theme.surfaceAlt);
+    g_theme.textPrimary =
+        ParseEnvironmentColor(L"KSWORD_PLUGIN_COLOR_TEXT_PRIMARY", g_theme.textPrimary);
+    g_theme.textSecondary =
+        ParseEnvironmentColor(L"KSWORD_PLUGIN_COLOR_TEXT_SECONDARY", g_theme.textSecondary);
+    g_theme.border = ParseEnvironmentColor(L"KSWORD_PLUGIN_COLOR_BORDER", g_theme.border);
+    g_theme.accent = ParseEnvironmentColor(L"KSWORD_PLUGIN_COLOR_ACCENT", g_theme.accent);
+    g_theme.onAccent =
+        ParseEnvironmentColor(L"KSWORD_PLUGIN_COLOR_ON_ACCENT", g_theme.onAccent);
+    g_theme.windowBrush = CreateSolidBrush(g_theme.window);
+    g_theme.surfaceBrush = CreateSolidBrush(g_theme.surface);
+    g_theme.surfaceAltBrush = CreateSolidBrush(g_theme.surfaceAlt);
+}
+
+void DestroyTheme() {
+    if (g_theme.windowBrush) DeleteObject(g_theme.windowBrush);
+    if (g_theme.surfaceBrush) DeleteObject(g_theme.surfaceBrush);
+    if (g_theme.surfaceAltBrush) DeleteObject(g_theme.surfaceAltBrush);
+}
+
 std::wstring ToWide(const std::string& bytes) {
     if (bytes.empty()) {
         return {};
@@ -201,11 +272,44 @@ void SetControlFont(HWND control, HFONT font = nullptr) {
     if (control) {
         SendMessageW(control, WM_SETFONT,
                      reinterpret_cast<WPARAM>(font ? font : g_font), TRUE);
+        SetWindowTheme(control, g_theme.dark ? L"" : L"Explorer", nullptr);
     }
+}
+
+LRESULT ControlColor(UINT message, WPARAM wParam, LPARAM lParam, HWND warning = nullptr) {
+    HDC dc = reinterpret_cast<HDC>(wParam);
+    HWND control = reinterpret_cast<HWND>(lParam);
+    if (control == warning) {
+        SetTextColor(dc, RGB(255, 255, 255));
+        SetBkColor(dc, RGB(150, 18, 24));
+        return reinterpret_cast<LRESULT>(g_warningBrush);
+    }
+
+    SetTextColor(dc, IsWindowEnabled(control) ? g_theme.textPrimary : g_theme.textSecondary);
+    if (message == WM_CTLCOLOREDIT || message == WM_CTLCOLORLISTBOX) {
+        SetBkMode(dc, OPAQUE);
+        SetBkColor(dc, g_theme.surfaceAlt);
+        return reinterpret_cast<LRESULT>(g_theme.surfaceAltBrush);
+    }
+    SetBkMode(dc, TRANSPARENT);
+    SetBkColor(dc, g_theme.surface);
+    return reinterpret_cast<LRESULT>(g_theme.surfaceBrush);
 }
 
 HWND CreateControl(HWND parent, const wchar_t* className, const wchar_t* text,
                    DWORD style, int id, DWORD exStyle = 0) {
+    wchar_t parentClass[64]{};
+    GetClassNameW(parent, parentClass, static_cast<int>(std::size(parentClass)));
+    if (wcscmp(parentClass, kContentClass) == 0) {
+        if (wcscmp(className, L"STATIC") == 0 && (style & SS_TYPEMASK) != SS_OWNERDRAW) {
+            exStyle |= WS_EX_TRANSPARENT;
+        } else if (wcscmp(className, L"BUTTON") == 0) {
+            const DWORD buttonType = style & BS_TYPEMASK;
+            if (buttonType == BS_GROUPBOX || buttonType == BS_AUTOCHECKBOX) {
+                exStyle |= WS_EX_TRANSPARENT;
+            }
+        }
+    }
     HWND control = CreateWindowExW(exStyle, className, text, style | WS_CHILD | WS_VISIBLE,
                                    0, 0, 10, 10, parent,
                                    reinterpret_cast<HMENU>(static_cast<INT_PTR>(id)),
@@ -821,6 +925,7 @@ void LayoutContent(HWND window) {
     const int s = g_scrollPos;
     const int margin = 10;
 
+    SendMessageW(window, WM_SETREDRAW, FALSE, 0);
     Move(g_ui.preflightGroup, margin, 5, width - 2 * margin, 108, s);
     Move(g_ui.preflight, 24, 25, width - 176, 76, s);
     Move(g_ui.refresh, width - 142, 45, 118, 34, s);
@@ -870,8 +975,28 @@ void LayoutContent(HWND window) {
     info.nPage = static_cast<UINT>(height);
     info.nPos = g_scrollPos;
     SetScrollInfo(window, SB_VERT, &info, TRUE);
+    SendMessageW(window, WM_SETREDRAW, TRUE, 0);
     RedrawWindow(window, nullptr, nullptr,
-                 RDW_INVALIDATE | RDW_ERASE | RDW_ALLCHILDREN | RDW_UPDATENOW);
+                 RDW_INVALIDATE | RDW_ERASE | RDW_FRAME | RDW_ALLCHILDREN |
+                     RDW_UPDATENOW);
+}
+
+void ScrollContentTo(HWND window, int requestedPosition) {
+    RECT client{};
+    GetClientRect(window, &client);
+    const int height = std::max(1L, client.bottom - client.top);
+    const int maximum = std::max(0, kVirtualContentHeight - height);
+    const int nextPosition = std::clamp(requestedPosition, 0, maximum);
+    if (nextPosition == g_scrollPos) return;
+
+    const int delta = g_scrollPos - nextPosition;
+    g_scrollPos = nextPosition;
+    SetScrollPos(window, SB_VERT, g_scrollPos, TRUE);
+    ScrollWindowEx(window, 0, delta, nullptr, nullptr, nullptr, nullptr,
+                   SW_SCROLLCHILDREN | SW_INVALIDATE | SW_ERASE);
+    RedrawWindow(window, nullptr, nullptr,
+                 RDW_INVALIDATE | RDW_ERASE | RDW_FRAME | RDW_ALLCHILDREN |
+                     RDW_UPDATENOW);
 }
 
 void CreateContentControls(HWND window) {
@@ -959,12 +1084,12 @@ void CreateContentControls(HWND window) {
 }
 
 void DrawPreview(const DRAWITEMSTRUCT* item) {
-    HBRUSH background = CreateSolidBrush(RGB(32, 34, 38));
+    HBRUSH background = CreateSolidBrush(g_theme.surfaceAlt);
     FillRect(item->hDC, &item->rcItem, background);
     DeleteObject(background);
     if (!g_previewImage) {
         SetBkMode(item->hDC, TRANSPARENT);
-        SetTextColor(item->hDC, RGB(220, 220, 220));
+        SetTextColor(item->hDC, g_theme.textSecondary);
         RECT textRect = item->rcItem;
         DrawTextW(item->hDC, L"无有效预览\nNo valid preview", -1, &textRect,
                   DT_CENTER | DT_VCENTER | DT_WORDBREAK);
@@ -989,11 +1114,23 @@ void DrawPreview(const DRAWITEMSTRUCT* item) {
 LRESULT CALLBACK ContentWindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lParam) {
     switch (message) {
     case WM_CREATE:
+        SetWindowTheme(window, g_theme.dark ? L"" : L"Explorer", nullptr);
         CreateContentControls(window);
         return 0;
     case WM_SIZE:
         LayoutContent(window);
         return 0;
+    case WM_ERASEBKGND: {
+        RECT client{};
+        GetClientRect(window, &client);
+        FillRect(reinterpret_cast<HDC>(wParam), &client, g_theme.surfaceBrush);
+        return 1;
+    }
+    case WM_CTLCOLORSTATIC:
+    case WM_CTLCOLOREDIT:
+    case WM_CTLCOLORBTN:
+    case WM_CTLCOLORLISTBOX:
+        return ControlColor(message, wParam, lParam);
     case WM_VSCROLL: {
         SCROLLINFO info{sizeof(info), SIF_ALL};
         GetScrollInfo(window, SB_VERT, &info);
@@ -1008,9 +1145,7 @@ LRESULT CALLBACK ContentWindowProc(HWND window, UINT message, WPARAM wParam, LPA
         case SB_BOTTOM: position = info.nMax; break;
         default: return 0;
         }
-        const int maximum = std::max(0, info.nMax - static_cast<int>(info.nPage) + 1);
-        g_scrollPos = std::clamp(position, 0, maximum);
-        LayoutContent(window);
+        ScrollContentTo(window, position);
         return 0;
     }
     case WM_MOUSEWHEEL: {
@@ -1073,6 +1208,7 @@ void LayoutRoot(HWND window) {
 LRESULT CALLBACK RootWindowProc(HWND window, UINT message, WPARAM wParam, LPARAM lParam) {
     switch (message) {
     case WM_CREATE:
+        SetWindowTheme(window, g_theme.dark ? L"" : L"Explorer", nullptr);
         g_ui.warning = CreateControl(
             window, L"STATIC",
             L"危险 / DANGER：HackBGRT 会修改 UEFI 启动链；配置错误、断电或错误磁盘选择可能导致系统无法启动。\n"
@@ -1080,6 +1216,7 @@ LRESULT CALLBACK RootWindowProc(HWND window, UINT message, WPARAM wParam, LPARAM
             L"仅支持 UEFI，建议只连接一个可启动磁盘。原厂 Logo 短暂闪现属于预期现象。软件无担保，风险由使用者承担。",
             SS_LEFT | SS_EDITCONTROL, 0);
         SetControlFont(g_ui.warning, g_warningFont);
+        SetWindowTheme(g_ui.warning, L"Explorer", nullptr);
         g_ui.content = CreateWindowExW(WS_EX_CONTROLPARENT, kContentClass, L"",
                                        WS_CHILD | WS_VISIBLE | WS_CLIPCHILDREN | WS_VSCROLL,
                                        0, 0, 10, 10, window, nullptr, g_instance, nullptr);
@@ -1088,13 +1225,17 @@ LRESULT CALLBACK RootWindowProc(HWND window, UINT message, WPARAM wParam, LPARAM
     case WM_SIZE:
         LayoutRoot(window);
         return 0;
+    case WM_ERASEBKGND: {
+        RECT client{};
+        GetClientRect(window, &client);
+        FillRect(reinterpret_cast<HDC>(wParam), &client, g_theme.windowBrush);
+        return 1;
+    }
     case WM_CTLCOLORSTATIC:
-        if (reinterpret_cast<HWND>(lParam) == g_ui.warning) {
-            SetTextColor(reinterpret_cast<HDC>(wParam), RGB(255, 255, 255));
-            SetBkColor(reinterpret_cast<HDC>(wParam), RGB(150, 18, 24));
-            return reinterpret_cast<LRESULT>(g_warningBrush);
-        }
-        break;
+    case WM_CTLCOLOREDIT:
+    case WM_CTLCOLORBTN:
+    case WM_CTLCOLORLISTBOX:
+        return ControlColor(message, wParam, lParam, g_ui.warning);
     case WM_TIMER:
         if (g_hostParent && (!IsWindow(g_hostParent) ||
                             GetWindowThreadProcessId(g_hostParent, nullptr) == 0)) {
@@ -1123,7 +1264,7 @@ bool RegisterWindowClasses() {
     content.lpfnWndProc = ContentWindowProc;
     content.lpszClassName = kContentClass;
     content.hCursor = LoadCursorW(nullptr, IDC_ARROW);
-    content.hbrBackground = reinterpret_cast<HBRUSH>(COLOR_WINDOW + 1);
+    content.hbrBackground = g_theme.surfaceBrush;
     if (!RegisterClassExW(&content)) return false;
 
     WNDCLASSEXW root{sizeof(root)};
@@ -1131,7 +1272,7 @@ bool RegisterWindowClasses() {
     root.lpfnWndProc = RootWindowProc;
     root.lpszClassName = kRootClass;
     root.hCursor = LoadCursorW(nullptr, IDC_ARROW);
-    root.hbrBackground = reinterpret_cast<HBRUSH>(COLOR_WINDOW + 1);
+    root.hbrBackground = g_theme.windowBrush;
     root.hIcon = LoadIconW(nullptr, IDI_WARNING);
     return RegisterClassExW(&root) != 0;
 }
@@ -1225,6 +1366,7 @@ int APIENTRY wWinMain(HINSTANCE instance, HINSTANCE, LPWSTR, int showCommand) {
     InitCommonControlsEx(&controls);
     Gdiplus::GdiplusStartupInput gdiplusInput;
     Gdiplus::GdiplusStartup(&g_gdiplusToken, &gdiplusInput, nullptr);
+    InitializeTheme();
     CreateFonts();
     g_warningBrush = CreateSolidBrush(RGB(150, 18, 24));
     g_payloadDir = ModuleDirectory() / L"HackBGRT";
@@ -1275,6 +1417,7 @@ int APIENTRY wWinMain(HINSTANCE instance, HINSTANCE, LPWSTR, int showCommand) {
         g_warningFont != GetStockObject(DEFAULT_GUI_FONT)) {
         DeleteObject(g_warningFont);
     }
+    DestroyTheme();
     if (g_gdiplusToken) Gdiplus::GdiplusShutdown(g_gdiplusToken);
     return static_cast<int>(message.wParam);
 }

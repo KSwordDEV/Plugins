@@ -2,7 +2,7 @@
   "ksword_plugin_api": "1",
   "id": "booting",
   "name": "Booting",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Process-isolated UEFI boot-logo configuration through the official HackBGRT release, with persistent warnings and guarded recovery checks.",
   "plugin_type": "tab",
   "runtime": "executable",

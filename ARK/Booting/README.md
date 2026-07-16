@@ -78,7 +78,7 @@ plugin\
 
 Point a development build at a separate plugin root with
 `KSWORD_PLUGIN_ROOT`; a packaged KSword installation may use its normal
-`plugin\booting` directory. Open **Misc → Booting** to start the plugin. Merely
+`plugin\booting` directory. Open the top-level **Plugins → Booting** tab to start the plugin. Merely
 discovering the manifest does not execute it.
 
 ## Protocol
@@ -97,6 +97,14 @@ writes one JSON Lines event to stdout:
 ```
 
 Run `BootingPlugin.exe` without arguments only for standalone UI inspection.
+
+## Host style injection
+
+When launched by KSword, the native Win32 UI consumes the host style contract from
+`KSWORD_PLUGIN_THEME` plus `KSWORD_PLUGIN_COLOR_WINDOW`, `SURFACE`, `SURFACE_ALT`,
+`TEXT_PRIMARY`, `TEXT_SECONDARY`, `BORDER`, `ACCENT`, and `ON_ACCENT` (all color
+variables use `#RRGGBB`). Missing values fall back to a complete dark or light palette,
+so an independently launched plugin remains usable.
 Standalone mode does not install anything by itself; the same safety gates
 remain in force.
 
