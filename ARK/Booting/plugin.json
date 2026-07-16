@@ -1,0 +1,27 @@
+{
+  "ksword_plugin_api": "1",
+  "id": "booting",
+  "name": "Booting",
+  "version": "1.0.0",
+  "description": "Process-isolated UEFI boot-logo configuration through the official HackBGRT release, with persistent warnings and guarded recovery checks.",
+  "plugin_type": "tab",
+  "runtime": "executable",
+  "entrypoint": "BootingPlugin.exe",
+  "default_command": "tab",
+  "targets": [
+    "tab"
+  ],
+  "tab": {
+    "title": "Booting",
+    "ready_event": "tab_ready",
+    "startup_timeout_ms": 20000
+  },
+  "commands": [
+    {
+      "name": "tab",
+      "description": "Create a WS_CHILD user interface under the HWND supplied by KSword."
+    }
+  ],
+  "license": "LICENSE.txt",
+  "notice": "NOTICE"
+}

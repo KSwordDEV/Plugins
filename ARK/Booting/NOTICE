@@ -1,0 +1,22 @@
+KSword Booting Tab Plugin 1.0.0
+
+This plugin is an independent, process-isolated KSword plugin. It is not part
+of the KSword main repository or KSword release payload.
+
+The packaged plugin redistributes the unmodified official HackBGRT 2.6.0
+Windows release:
+
+  Upstream: https://github.com/Metabolix/HackBGRT
+  Release: v2.6.0 (2026-04-02)
+  Archive: HackBGRT-2.6.0.zip
+  Archive SHA-256:
+  6204911D777AC03E514B90126568EF6FAA1D477779B31C536B142DBA92F4A2C0
+
+HackBGRT is licensed under the MIT License. Its original LICENSE is retained
+under HackBGRT/LICENSE. The redistributed shim/MokManager files carry separate
+copyright information retained under HackBGRT/shim-signed/COPYRIGHT.
+
+The plugin does not modify HackBGRT executables or EFI binaries. It writes a
+configuration and image in a per-user working copy, and invokes only the
+documented batch interface. It intentionally does not expose HackBGRT's legacy
+Windows boot-loader overwrite command.

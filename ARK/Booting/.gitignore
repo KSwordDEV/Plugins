@@ -1,0 +1,6 @@
+.vs/
+obj/
+x64/
+dist/
+*.user
+*.suo

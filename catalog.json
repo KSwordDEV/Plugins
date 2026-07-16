@@ -31,6 +31,21 @@
       "sha256": "C90EE2CF175825DA6806EEE50F6217808007461EB7C1DFFF85F0A522EF7C9AA7",
       "license_name": "GNU Lesser General Public License v3.0 or later",
       "license_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/main/ARK/nDPI-Network-Inspector/LICENSE.txt"
+    },
+    {
+      "id": "booting",
+      "name": "Booting",
+      "version": "1.0.0",
+      "description": "Process-isolated UEFI boot-logo configuration through official HackBGRT 2.6.0 with guarded preflight checks and persistent risk warnings.",
+      "targets": [
+        "tab"
+      ],
+      "repository_path": "ARK/Booting",
+      "install_directory": "booting",
+      "archive_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/main/ARK/Booting/Booting.zip",
+      "sha256": "5643D0F40B59632C424E101F24F08288C9E45EB0368E33404EB0484B03BB7C67",
+      "license_name": "MIT License",
+      "license_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/main/ARK/Booting/LICENSE.txt"
     }
   ]
 }
