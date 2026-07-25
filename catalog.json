@@ -20,15 +20,16 @@
     {
       "id": "cheat-engine",
       "name": "Cheat Engine（KSword R0）",
-      "version": "1.0.0",
-      "description": "Bundled Cheat Engine 7.6 with process open, memory query, read and write routed through the KSword driver.",
+      "version": "1.1.0",
+      "description": "Bundled Cheat Engine 7.6 as a process action or embedded KSword Tab, with memory interaction routed through the KSword driver.",
       "targets": [
-        "process"
+        "process",
+        "tab"
       ],
       "repository_path": "ARK/Cheat-Engine",
       "install_directory": "cheat-engine",
       "archive_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/main/ARK/Cheat-Engine/Cheat-Engine.zip",
-      "sha256": "308B274498D589E9EC130F7B7DB6E32A8D3414890EF1A71AE7108474B09E4661",
+      "sha256": "8A8677FCD3B7B519CB6E4A619D3667A6FCB06D5D7FAFF4EC37E15B00F192602B",
       "license_name": "GNU General Public License v3.0 only (KSword components); bundled third-party terms apply",
       "license_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/main/ARK/Cheat-Engine/LICENSE.txt"
     },
