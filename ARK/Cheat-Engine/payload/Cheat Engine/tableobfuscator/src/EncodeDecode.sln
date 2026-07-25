@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EncodeDecode", "EncodeDecode\EncodeDecode.vcxproj", "{0574383E-A0F3-45B3-90D6-1527DFF478CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Decoder|x64 = Decoder|x64
+		Decoder|x86 = Decoder|x86
+		Encoder|x64 = Encoder|x64
+		Encoder|x86 = Encoder|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0574383E-A0F3-45B3-90D6-1527DFF478CC}.Decoder|x64.ActiveCfg = Decoder|x64
+		{0574383E-A0F3-45B3-90D6-1527DFF478CC}.Decoder|x64.Build.0 = Decoder|x64
+		{0574383E-A0F3-45B3-90D6-1527DFF478CC}.Decoder|x86.ActiveCfg = Decoder|x64
+		{0574383E-A0F3-45B3-90D6-1527DFF478CC}.Encoder|x64.ActiveCfg = Encoder|x64
+		{0574383E-A0F3-45B3-90D6-1527DFF478CC}.Encoder|x64.Build.0 = Encoder|x64
+		{0574383E-A0F3-45B3-90D6-1527DFF478CC}.Encoder|x86.ActiveCfg = Decoder|x64
+		{0574383E-A0F3-45B3-90D6-1527DFF478CC}.Encoder|x86.Build.0 = Decoder|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D447885B-308E-433C-83F5-91EDCCEE8912}
+	EndGlobalSection
+EndGlobal
