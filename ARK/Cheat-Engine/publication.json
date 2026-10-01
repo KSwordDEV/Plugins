@@ -1,11 +1,11 @@
 {
   "plugin_id": "cheat-engine",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "source_repository": "https://github.com/KSwordDEV/KSword",
-  "source_commit": "650adee89a35f3248c752aae6064e212e07184ed",
+  "source_commit": "ce8aa5944b24b13eccdb2660a9ab32776ea9210d",
   "archive": "Cheat-Engine.zip",
-  "sha256": "18875AED790AF4BFD386C1A46F6DA4B722C13BF8DF099E2D86FEA5468F4E678E",
+  "sha256": "083271C03C7AE6D3A0461356BB45D14F60C23F88A40B58C9A25AD4A884FBF83E",
   "validated_guest": "KSword-HVM-Target",
-  "validated_guest_driver_sha256": "2C0CA1A4A1E9F822DC7795F9C31D6B6737E3F02FE476D93B9A06B7DDCB0C4146",
+  "validated_guest_driver_sha256": "65545A14F9F62DA21C0595EF7FB6274589254436A26AA7B0C033E3C9A3BAA250",
   "validation_report": "ksword-debugger-vm-validation.md"
 }

@@ -15,11 +15,11 @@ Network Inspector for live application-protocol classification, plus the
 guarded Booting Tab plugin for official HackBGRT-based UEFI logo configuration.
 
 The debugger plugins provide a standalone 64-bit Cheat Engine integration
-(plugin 2.0.0) and x96dbg 1.0.0, each with a KSword control/log Tab and an acknowledged HVM backend
+(plugin 2.1.0) and x96dbg 1.1.0, each with a KSword control/log Tab and an acknowledged HVM backend
 selector. Their archives include the VM validation report and original component
-licenses; x96dbg also includes the corresponding source archive.
+licenses; both include their corresponding source archives.
 
 R0/HVM features require the matching current KSword driver from
-[650adee8](https://github.com/KSwordDEV/KSword/commit/650adee89a35f3248c752aae6064e212e07184ed).
+[ce8aa594](https://github.com/KSwordDEV/KSword/commit/ce8aa5944b24b13eccdb2660a9ab32776ea9210d).
 Each debugger package directory records the source revision and archive hash in
 `publication.json`. x96dbg native forwarding remains usable without the driver.

@@ -76,9 +76,14 @@
   },
   "files": [
     {
+      "path": "DEBUGGER_BACKEND.md",
+      "bytes": 16340,
+      "sha256": "4b50aabe4f462cc1ec11cff3fc5414f4c8fb3349ef4705ce2ace11424a8dd68c"
+    },
+    {
       "path": "ksword-debugger-vm-validation.md",
-      "bytes": 9639,
-      "sha256": "3f676295a91f5749642d5586fbc815c8e529bc30b72b7b1643580382136d91fa"
+      "bytes": 22625,
+      "sha256": "63bd3c9c0be0b647e0bb59ef8b491e74ee86b71bc2ade8ee4e6d1f9565c0cf1d"
     },
     {
       "path": "ksword-x64dbg-backend.md",
@@ -92,53 +97,18 @@
     },
     {
       "path": "KSword-x96dbg-source.zip",
-      "bytes": 7030880,
-      "sha256": "95d84861a39c91d7a2d2d20ad433d6dec1d2871a35556e07ec782a25d27e8ab7"
+      "bytes": 9943288,
+      "sha256": "b1851f89e8bbcd5deec56b5ba12294bd078e10299537061024a4fb1c96f370d6"
     },
     {
       "path": "KswordX96dbgLauncher.exe",
-      "bytes": 1461760,
-      "sha256": "d0f9e62ec000d3ce59c5221f751a3d7fc7c5ef2a1fe568363b819d01fa5b49f3"
+      "bytes": 1485824,
+      "sha256": "85b1b001930298711ded9faef5d792e3a2629e3ad2774522811298f10c5acaef"
     },
     {
       "path": "LICENSE.txt",
       "bytes": 86015,
       "sha256": "a5dd17c07449bd6d0dcc2cd0b396dcd532278e87b337b273ffdc00976455dabd"
-    },
-    {
-      "path": "NOTICE",
-      "bytes": 753,
-      "sha256": "4b778852ed837144f2bb0c38e6b90bffbb1ed9273308ad16a04a2769006c582e"
-    },
-    {
-      "path": "plugin.json",
-      "bytes": 1248,
-      "sha256": "79c6ffd97de4cc6434fe93c6b5d05db9ce289f3d96811f85d20b912212871b6a"
-    },
-    {
-      "path": "README.md",
-      "bytes": 3256,
-      "sha256": "e28a294e8456c6ee02d7e24020c255f851150d33db299c20831741b3c36d8d10"
-    },
-    {
-      "path": "SOURCE.md",
-      "bytes": 747,
-      "sha256": "2304c24c8c1c1ef75ad9d8091752f228f1e64fad73359d028b0919b4c478bbc0"
-    },
-    {
-      "path": "x64dbg-ksword-engine.patch",
-      "bytes": 39312,
-      "sha256": "1147a9d8a6a648326ca0e4bfcd307d5965de8e272315051333f86562a7afc775"
-    },
-    {
-      "path": "licenses/TitanEngine-LICENSE",
-      "bytes": 7816,
-      "sha256": "ea7d049c7705dc13afc202dd18e1827f3484f8212fd3fa7b82fc4a0c363432c9"
-    },
-    {
-      "path": "licenses/x64dbg-LICENSE",
-      "bytes": 36298,
-      "sha256": "1791b618e0aab8312274d6d229e692a680cc633676cd7f87e189f79097951f92"
     },
     {
       "path": "licenses/runtime-dependencies/asmjit-LICENSE.md",
@@ -184,21 +154,6 @@
       "path": "licenses/runtime-dependencies/provenance.json",
       "bytes": 12405,
       "sha256": "66a191b37549b421bc6d960431b22ed87bf87784393e519ff520fb08148ec6f0"
-    },
-    {
-      "path": "licenses/runtime-dependencies/Scylla-LICENSE",
-      "bytes": 35147,
-      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
-    },
-    {
-      "path": "licenses/runtime-dependencies/XEDParse-LICENSE",
-      "bytes": 7651,
-      "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768"
-    },
-    {
-      "path": "licenses/runtime-dependencies/Zydis-LICENSE",
-      "bytes": 1122,
-      "sha256": "e5e99718209e94baaf3e9cbf6f64aa3329c9e73c63b1ab47e10f29d81974e6f3"
     },
     {
       "path": "licenses/runtime-dependencies/Qt5/LICENSE.FDL",
@@ -261,14 +216,14 @@
       "sha256": "dc2caba29eb862f6c1720aecb18e16f4e19d61227ee408be37fb0e9c3d00994f"
     },
     {
-      "path": "licenses/runtime-dependencies/Qt5/original-third-party/freetype/LICENSE.txt",
-      "bytes": 26377,
-      "sha256": "4f71138144d60a66129064e348532a923e7a45d1f1c863af4c1c13ad74b0b229"
-    },
-    {
       "path": "licenses/runtime-dependencies/Qt5/original-third-party/freetype/docs/LICENSE.TXT",
       "bytes": 1743,
       "sha256": "fd056de4196903a676208ef58cfddafc7d583d1f28fa2e44c309cf84a59e62fb"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/freetype/LICENSE.txt",
+      "bytes": 26377,
+      "sha256": "4f71138144d60a66129064e348532a923e7a45d1f1c863af4c1c13ad74b0b229"
     },
     {
       "path": "licenses/runtime-dependencies/Qt5/original-third-party/gradle/LICENSE-GRADLEW.txt",
@@ -401,6 +356,31 @@
       "sha256": "3c6ba0b5bfa7830505301ffb336a17b0748e0d61c4d34216e9dc98f10e40395e"
     },
     {
+      "path": "licenses/runtime-dependencies/Scylla-LICENSE",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "licenses/runtime-dependencies/XEDParse-LICENSE",
+      "bytes": 7651,
+      "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Zydis-LICENSE",
+      "bytes": 1122,
+      "sha256": "e5e99718209e94baaf3e9cbf6f64aa3329c9e73c63b1ab47e10f29d81974e6f3"
+    },
+    {
+      "path": "licenses/TitanEngine-LICENSE",
+      "bytes": 7816,
+      "sha256": "ea7d049c7705dc13afc202dd18e1827f3484f8212fd3fa7b82fc4a0c363432c9"
+    },
+    {
+      "path": "licenses/x64dbg-LICENSE",
+      "bytes": 36298,
+      "sha256": "1791b618e0aab8312274d6d229e692a680cc633676cd7f87e189f79097951f92"
+    },
+    {
       "path": "licenses/x64dbg-third-party/DbgEng/LICENSE",
       "bytes": 1359,
       "sha256": "36266a8fd073568394cb81cdb2b124f7fdae2c64c1a7ed09db34b4d22efa2951"
@@ -411,14 +391,19 @@
       "sha256": "0c633c5f996407872c26c10dc9af5dff3a5ca232d4be1b6c9f1d6f4e88a29ddf"
     },
     {
+      "path": "licenses/x64dbg-third-party/TitanEngine/distorm/COPYING",
+      "bytes": 1561,
+      "sha256": "7f19532f8aae6605f524cbc28ee93ecfe72b2d89211a438e8a0795beebbebe6c"
+    },
+    {
       "path": "licenses/x64dbg-third-party/TitanEngine/LICENSE",
       "bytes": 7816,
       "sha256": "ea7d049c7705dc13afc202dd18e1827f3484f8212fd3fa7b82fc4a0c363432c9"
     },
     {
-      "path": "licenses/x64dbg-third-party/TitanEngine/distorm/COPYING",
-      "bytes": 1561,
-      "sha256": "7f19532f8aae6605f524cbc28ee93ecfe72b2d89211a438e8a0795beebbebe6c"
+      "path": "NOTICE",
+      "bytes": 753,
+      "sha256": "4b778852ed837144f2bb0c38e6b90bffbb1ed9273308ad16a04a2769006c582e"
     },
     {
       "path": "payload/x64dbg/.deps_copied",
@@ -439,141 +424,6 @@
       "path": "payload/x64dbg/D3Dcompiler_47.dll",
       "bytes": 4173928,
       "sha256": "e994847e01a6f1e4cbdc5a864616ac262f67ee4f14db194984661a8d927ab7f4"
-    },
-    {
-      "path": "payload/x64dbg/dbghelp.dll",
-      "bytes": 2222016,
-      "sha256": "df29a85fb3f06495792180f74cdfbda2aa9d3172b7797b2c478fb4eb4e5371cc"
-    },
-    {
-      "path": "payload/x64dbg/DeviceNameResolver.dll",
-      "bytes": 76512,
-      "sha256": "c6702029a705fb5db2775f31331b8314566dd84d9702b0c6ff513515c160629c"
-    },
-    {
-      "path": "payload/x64dbg/jansson.dll",
-      "bytes": 150240,
-      "sha256": "eb704b761c638dc9cc4690941dd0de71e4f0575280d41243a5b0d40ebd38f4e8"
-    },
-    {
-      "path": "payload/x64dbg/ldconvert.dll",
-      "bytes": 58080,
-      "sha256": "293539875b478fc2b554104f8c1e0e80a169e75c829a5b882e10b601e6e99744"
-    },
-    {
-      "path": "payload/x64dbg/libEGL.dll",
-      "bytes": 27824,
-      "sha256": "d2a16238e769a4554fc2bcbb50521bdcc92e128b2f2c0b9ad2ed55104d79a3ef"
-    },
-    {
-      "path": "payload/x64dbg/libGLESV2.dll",
-      "bytes": 3578032,
-      "sha256": "ab9da3ae64bc7fd2278324c2fe8802b4cd59fb9930fcc1da541c33fe6da07f02"
-    },
-    {
-      "path": "payload/x64dbg/LLVMDemangle.dll",
-      "bytes": 607480,
-      "sha256": "8de391f11ceeafa007badf71b62560368f8c71623486ff1c2e4c5373fe482834"
-    },
-    {
-      "path": "payload/x64dbg/loaddll.exe",
-      "bytes": 139776,
-      "sha256": "8a6649fb80be41ed3e138f6f4c249ec0a5423ad95c5c8a155f065b717d86fb93"
-    },
-    {
-      "path": "payload/x64dbg/lz4.dll",
-      "bytes": 98528,
-      "sha256": "5cfae56f5319dc343799ac7e9738bc367f9843ce4bf4e795d2ee2ca268fa9c5d"
-    },
-    {
-      "path": "payload/x64dbg/msdia140.dll",
-      "bytes": 2291768,
-      "sha256": "df6bbbfeff8af9c26493a58aab7ee1073f54b5196d72ec0a090bc23c64f751aa"
-    },
-    {
-      "path": "payload/x64dbg/msvcp140.dll",
-      "bytes": 575056,
-      "sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde"
-    },
-    {
-      "path": "payload/x64dbg/Qt5Core.dll",
-      "bytes": 5979040,
-      "sha256": "ffe7dd4f3edbf6b87d1855c16b9f9c245cc3bbefb4d032537c5686699f91790c"
-    },
-    {
-      "path": "payload/x64dbg/Qt5Gui.dll",
-      "bytes": 6504624,
-      "sha256": "90b1a7c47965eafcc896b99e9520198c097f60975b74884f1c2bc91a5ce88160"
-    },
-    {
-      "path": "payload/x64dbg/Qt5Svg.dll",
-      "bytes": 344752,
-      "sha256": "c795950ce4a2c34a0973738376118fb2172af588430d5eb8527dd6f0d4ca3d1f"
-    },
-    {
-      "path": "payload/x64dbg/Qt5Widgets.dll",
-      "bytes": 5575856,
-      "sha256": "9e38324e796eb66200498dbfdcda8ac92f92155a9accdc6c97f92f475ea4c8c2"
-    },
-    {
-      "path": "payload/x64dbg/Qt5WinExtras.dll",
-      "bytes": 472752,
-      "sha256": "8891576fb796b8dffa2a02010c7c9977e58e81c767d17bd3e06fd661ddbe0704"
-    },
-    {
-      "path": "payload/x64dbg/Scylla.dll",
-      "bytes": 552672,
-      "sha256": "3a8d0d90b6f1e8e4ccb6c3c84e1755f07775562f4272177eb67ac2f0722af5fa"
-    },
-    {
-      "path": "payload/x64dbg/TitanEngine.dll",
-      "bytes": 415744,
-      "sha256": "0425eb9f75c6efa0a2d355f4e11d4aad8a0a949727d35ad6db6d10398da62826"
-    },
-    {
-      "path": "payload/x64dbg/vcruntime140_1.dll",
-      "bytes": 49640,
-      "sha256": "7dd9aa02e271c68ca6d5f18d651d23a15d7259715af43326578f7dde27f37637"
-    },
-    {
-      "path": "payload/x64dbg/vcruntime140.dll",
-      "bytes": 119888,
-      "sha256": "02c6aa0e6e624411a9f19b0360a7865ab15908e26024510e5c38a9c08362c35a"
-    },
-    {
-      "path": "payload/x64dbg/x64_bridge.dll",
-      "bytes": 21216,
-      "sha256": "31ed3f4d03818dee8aad6a630ddbb6b1ad32ff58b00182dfb4b03f5728ebdfb6"
-    },
-    {
-      "path": "payload/x64dbg/x64_dbg.dll",
-      "bytes": 14048,
-      "sha256": "2b1e0cdc18dd65a23617fb7f75f6f9d3039afe55cd8fa15e18a3419f3aadcc12"
-    },
-    {
-      "path": "payload/x64dbg/x64bridge.dll",
-      "bytes": 83456,
-      "sha256": "cbe7512306424bc3ef957845735df5f475f635631a209aa6c984b8656e3c55f0"
-    },
-    {
-      "path": "payload/x64dbg/x64dbg.dll",
-      "bytes": 2264576,
-      "sha256": "2838c9486fb6f71bbbd94368d118937cb218adb4107aa951c63dbf0e8cae708e"
-    },
-    {
-      "path": "payload/x64dbg/x64dbg.exe",
-      "bytes": 241664,
-      "sha256": "0883d9470428c8bce757ddc02bd088ad8146d27d0cc5c5258c0d4b5aedc16895"
-    },
-    {
-      "path": "payload/x64dbg/x64gui.dll",
-      "bytes": 4455936,
-      "sha256": "e97b7285d314664323c559fc20e72394b590c7458684f6397306bf9e0608ca48"
-    },
-    {
-      "path": "payload/x64dbg/XEDParse.dll",
-      "bytes": 1421024,
-      "sha256": "7237ace651d8ae8e3285c9a0256bf34d50e7a4c9722ce016bbcf74e80c3071d6"
     },
     {
       "path": "payload/x64dbg/DbgEng/dbgcore.dll",
@@ -609,6 +459,16 @@
       "path": "payload/x64dbg/DbgEng/TTDReplayCPU.dll",
       "bytes": 3491640,
       "sha256": "661cd1a882d157932c634b3807dd360e08997c0b0812e2585adb2628041e957e"
+    },
+    {
+      "path": "payload/x64dbg/dbghelp.dll",
+      "bytes": 2222016,
+      "sha256": "df29a85fb3f06495792180f74cdfbda2aa9d3172b7797b2c478fb4eb4e5371cc"
+    },
+    {
+      "path": "payload/x64dbg/DeviceNameResolver.dll",
+      "bytes": 76512,
+      "sha256": "c6702029a705fb5db2775f31331b8314566dd84d9702b0c6ff513515c160629c"
     },
     {
       "path": "payload/x64dbg/GleeBug/TitanEngine.dll",
@@ -666,14 +526,89 @@
       "sha256": "f345f43ce85f612269c026d9da52a788e118ef8a73d8e328e07941cbff6bdc25"
     },
     {
+      "path": "payload/x64dbg/jansson.dll",
+      "bytes": 150240,
+      "sha256": "eb704b761c638dc9cc4690941dd0de71e4f0575280d41243a5b0d40ebd38f4e8"
+    },
+    {
       "path": "payload/x64dbg/KSword/TitanEngine.dll",
-      "bytes": 449536,
-      "sha256": "f414dc06512855f65de50e5aefb88182502e40b952bc1ccb9705920539d1ab83"
+      "bytes": 481280,
+      "sha256": "36cc7773a4efba33ab6afdb4ecf3d0f703d69c2bf489ea2a37f9a15f2bedd6c1"
+    },
+    {
+      "path": "payload/x64dbg/ldconvert.dll",
+      "bytes": 58080,
+      "sha256": "293539875b478fc2b554104f8c1e0e80a169e75c829a5b882e10b601e6e99744"
+    },
+    {
+      "path": "payload/x64dbg/libEGL.dll",
+      "bytes": 27824,
+      "sha256": "d2a16238e769a4554fc2bcbb50521bdcc92e128b2f2c0b9ad2ed55104d79a3ef"
+    },
+    {
+      "path": "payload/x64dbg/libGLESV2.dll",
+      "bytes": 3578032,
+      "sha256": "ab9da3ae64bc7fd2278324c2fe8802b4cd59fb9930fcc1da541c33fe6da07f02"
+    },
+    {
+      "path": "payload/x64dbg/LLVMDemangle.dll",
+      "bytes": 607480,
+      "sha256": "8de391f11ceeafa007badf71b62560368f8c71623486ff1c2e4c5373fe482834"
+    },
+    {
+      "path": "payload/x64dbg/loaddll.exe",
+      "bytes": 139776,
+      "sha256": "8a6649fb80be41ed3e138f6f4c249ec0a5423ad95c5c8a155f065b717d86fb93"
+    },
+    {
+      "path": "payload/x64dbg/lz4.dll",
+      "bytes": 98528,
+      "sha256": "5cfae56f5319dc343799ac7e9738bc367f9843ce4bf4e795d2ee2ca268fa9c5d"
+    },
+    {
+      "path": "payload/x64dbg/msdia140.dll",
+      "bytes": 2291768,
+      "sha256": "df6bbbfeff8af9c26493a58aab7ee1073f54b5196d72ec0a090bc23c64f751aa"
+    },
+    {
+      "path": "payload/x64dbg/msvcp140.dll",
+      "bytes": 575056,
+      "sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde"
     },
     {
       "path": "payload/x64dbg/platforms/qwindows.dll",
       "bytes": 1473200,
       "sha256": "1fa4d2f13d22d9a859503d7b7c87ba39d379d9a14afcea7299d572eabb2bdf57"
+    },
+    {
+      "path": "payload/x64dbg/Qt5Core.dll",
+      "bytes": 5979040,
+      "sha256": "ffe7dd4f3edbf6b87d1855c16b9f9c245cc3bbefb4d032537c5686699f91790c"
+    },
+    {
+      "path": "payload/x64dbg/Qt5Gui.dll",
+      "bytes": 6504624,
+      "sha256": "90b1a7c47965eafcc896b99e9520198c097f60975b74884f1c2bc91a5ce88160"
+    },
+    {
+      "path": "payload/x64dbg/Qt5Svg.dll",
+      "bytes": 344752,
+      "sha256": "c795950ce4a2c34a0973738376118fb2172af588430d5eb8527dd6f0d4ca3d1f"
+    },
+    {
+      "path": "payload/x64dbg/Qt5Widgets.dll",
+      "bytes": 5575856,
+      "sha256": "9e38324e796eb66200498dbfdcda8ac92f92155a9accdc6c97f92f475ea4c8c2"
+    },
+    {
+      "path": "payload/x64dbg/Qt5WinExtras.dll",
+      "bytes": 472752,
+      "sha256": "8891576fb796b8dffa2a02010c7c9977e58e81c767d17bd3e06fd661ddbe0704"
+    },
+    {
+      "path": "payload/x64dbg/Scylla.dll",
+      "bytes": 552672,
+      "sha256": "3a8d0d90b6f1e8e4ccb6c3c84e1755f07775562f4272177eb67ac2f0722af5fa"
     },
     {
       "path": "payload/x64dbg/StaticEngine/TitanEngine.dll",
@@ -684,6 +619,87 @@
       "path": "payload/x64dbg/styles/qwindowsvistastyle.dll",
       "bytes": 145584,
       "sha256": "59f3183245e4ea6a93f04eb3dc7460b3911397cb5a9f7aa429921b7957b62684"
+    },
+    {
+      "path": "payload/x64dbg/TitanEngine.dll",
+      "bytes": 415744,
+      "sha256": "0425eb9f75c6efa0a2d355f4e11d4aad8a0a949727d35ad6db6d10398da62826"
+    },
+    {
+      "path": "payload/x64dbg/vcruntime140.dll",
+      "bytes": 119888,
+      "sha256": "02c6aa0e6e624411a9f19b0360a7865ab15908e26024510e5c38a9c08362c35a"
+    },
+    {
+      "path": "payload/x64dbg/vcruntime140_1.dll",
+      "bytes": 49640,
+      "sha256": "7dd9aa02e271c68ca6d5f18d651d23a15d7259715af43326578f7dde27f37637"
+    },
+    {
+      "path": "payload/x64dbg/x64_bridge.dll",
+      "bytes": 21216,
+      "sha256": "31ed3f4d03818dee8aad6a630ddbb6b1ad32ff58b00182dfb4b03f5728ebdfb6"
+    },
+    {
+      "path": "payload/x64dbg/x64_dbg.dll",
+      "bytes": 14048,
+      "sha256": "2b1e0cdc18dd65a23617fb7f75f6f9d3039afe55cd8fa15e18a3419f3aadcc12"
+    },
+    {
+      "path": "payload/x64dbg/x64bridge.dll",
+      "bytes": 83456,
+      "sha256": "cbe7512306424bc3ef957845735df5f475f635631a209aa6c984b8656e3c55f0"
+    },
+    {
+      "path": "payload/x64dbg/x64dbg.dll",
+      "bytes": 2264576,
+      "sha256": "2838c9486fb6f71bbbd94368d118937cb218adb4107aa951c63dbf0e8cae708e"
+    },
+    {
+      "path": "payload/x64dbg/x64dbg.exe",
+      "bytes": 241664,
+      "sha256": "0883d9470428c8bce757ddc02bd088ad8146d27d0cc5c5258c0d4b5aedc16895"
+    },
+    {
+      "path": "payload/x64dbg/x64gui.dll",
+      "bytes": 4455936,
+      "sha256": "e97b7285d314664323c559fc20e72394b590c7458684f6397306bf9e0608ca48"
+    },
+    {
+      "path": "payload/x64dbg/XEDParse.dll",
+      "bytes": 1421024,
+      "sha256": "7237ace651d8ae8e3285c9a0256bf34d50e7a4c9722ce016bbcf74e80c3071d6"
+    },
+    {
+      "path": "plugin.json",
+      "bytes": 1266,
+      "sha256": "a866fa87a6b6a35e62cc4b9b0dfcd61565f7647dae2f9a2271da38c8eaf4eee0"
+    },
+    {
+      "path": "POLICY_TEST.md",
+      "bytes": 5020,
+      "sha256": "25f5438cc412e7df34dee17126e2c92fc481e6b85089326b7ca11d5eb1fd877c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5337,
+      "sha256": "9f63656186e1716d6015c584c43bfdab3625f3d48add792ffb41171fca579a1f"
+    },
+    {
+      "path": "SOURCE.md",
+      "bytes": 926,
+      "sha256": "f6a28995eb9384b0539fdb0284a01b27a139e9cfe0e640b41c31564bae953a80"
+    },
+    {
+      "path": "TITAN_ENGINE.md",
+      "bytes": 9727,
+      "sha256": "e8f1916c69fc03aca78ce7ac753bda161efa08233fb5cdbf4566420fe4bdaee5"
+    },
+    {
+      "path": "x64dbg-ksword-engine.patch",
+      "bytes": 39312,
+      "sha256": "1147a9d8a6a648326ca0e4bfcd307d5965de8e272315051333f86562a7afc775"
     }
-  ]
+  ],
+  "plugin_version": "1.1.0"
 }

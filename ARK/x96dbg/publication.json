@@ -1,11 +1,11 @@
 {
   "plugin_id": "x96dbg",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "source_repository": "https://github.com/KSwordDEV/KSword",
-  "source_commit": "650adee89a35f3248c752aae6064e212e07184ed",
+  "source_commit": "ce8aa5944b24b13eccdb2660a9ab32776ea9210d",
   "archive": "x96dbg.zip",
-  "sha256": "D6FF1F5FC818DE1F1B6FA7731F19DFCDC5A405862D8D72565C6D52C4548E081C",
+  "sha256": "9C7CD0F3053F3BF27E4AFB9DC15717B954DCB9A0BD1EC6DB9D59483705922AB0",
   "validated_guest": "KSword-HVM-Target",
-  "validated_guest_driver_sha256": "2C0CA1A4A1E9F822DC7795F9C31D6B6737E3F02FE476D93B9A06B7DDCB0C4146",
+  "validated_guest_driver_sha256": "65545A14F9F62DA21C0595EF7FB6274589254436A26AA7B0C033E3C9A3BAA250",
   "validation_report": "ksword-debugger-vm-validation.md"
 }
