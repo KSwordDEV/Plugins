@@ -1,0 +1,689 @@
+{
+  "format": "ksword-x96dbg-payload/1",
+  "architecture": "x64",
+  "source_commit": "f107330b6563da3c38d60a3ad6e629057b7cf5d0",
+  "canonical_export_count": 64,
+  "canonical_exports": [
+    "MemoryReadSafe",
+    "MemoryReadUnsafe",
+    "MemoryWriteSafe",
+    "MemoryQuerySafe",
+    "MemoryAllocSafe",
+    "MemoryFreeSafe",
+    "MemoryProtectSafe",
+    "GetPEBLocation",
+    "GetTEBLocation",
+    "InitDebugW",
+    "InitReplayW",
+    "GetSessionInfo",
+    "ReplayGetPosition",
+    "ReplayGetExtent",
+    "ReplaySetPosition",
+    "ReplayRunBack",
+    "ReplayStepBack",
+    "StopDebug",
+    "SetBPXOptions",
+    "IsBPXEnabled",
+    "SetBPX",
+    "DeleteBPX",
+    "SetMemoryBPXEx",
+    "RemoveMemoryBPX",
+    "GetFullContextDataEx",
+    "SetFullContextDataEx",
+    "GetContextDataEx",
+    "SetContextDataEx",
+    "GetAVXContext",
+    "SetAVXContext",
+    "GetAVX512Context",
+    "SetAVX512Context",
+    "GetDebugData",
+    "SetCustomHandler",
+    "StepInto",
+    "StepOver",
+    "GetUnusedHardwareBreakPointRegister",
+    "SetHardwareBreakPoint",
+    "DeleteHardwareBreakPoint",
+    "RemoveAllBreakPoints",
+    "DebugLoop",
+    "SetNextDbgContinueStatus",
+    "AttachDebugger",
+    "DetachDebuggerEx",
+    "IsFileBeingDebugged",
+    "TitanOpenProcess",
+    "TitanOpenThread",
+    "TitanGetProcessImagePathW",
+    "TitanGetModulePathW",
+    "TitanCloseHandle",
+    "ProcessIsWow64",
+    "TitanTerminateProcess",
+    "RequestPause",
+    "TitanCreateRemoteThread",
+    "TitanSuspendThread",
+    "TitanResumeThread",
+    "TitanTerminateThread",
+    "TitanGetThreadId",
+    "TitanGetThreadPriority",
+    "TitanSetThreadPriority",
+    "TitanGetThreadTimes",
+    "TitanQueryThreadCycleTime",
+    "SetEngineVariable",
+    "EngineCheckStructAlignment"
+  ],
+  "engine_selection": {
+    "DebugEngine": 4,
+    "user_directory": "sessions/UUID",
+    "path": "KSword/TitanEngine.dll"
+  },
+  "files": [
+    {
+      "path": "ksword-debugger-vm-validation.md",
+      "bytes": 9639,
+      "sha256": "3f676295a91f5749642d5586fbc815c8e529bc30b72b7b1643580382136d91fa"
+    },
+    {
+      "path": "ksword-x64dbg-backend.md",
+      "bytes": 10751,
+      "sha256": "90a9eb0ff5442298bfad705bdd8c7e7769147fab9395b0c78c74f1e3e150c5b9"
+    },
+    {
+      "path": "ksword-x64dbg-validation.md",
+      "bytes": 6585,
+      "sha256": "72b81bca568de9c3dc743774be766f64eed65c1ddb2e59f0c432f3a9325dce8d"
+    },
+    {
+      "path": "KSword-x96dbg-source.zip",
+      "bytes": 7030880,
+      "sha256": "95d84861a39c91d7a2d2d20ad433d6dec1d2871a35556e07ec782a25d27e8ab7"
+    },
+    {
+      "path": "KswordX96dbgLauncher.exe",
+      "bytes": 1461760,
+      "sha256": "d0f9e62ec000d3ce59c5221f751a3d7fc7c5ef2a1fe568363b819d01fa5b49f3"
+    },
+    {
+      "path": "LICENSE.txt",
+      "bytes": 86015,
+      "sha256": "a5dd17c07449bd6d0dcc2cd0b396dcd532278e87b337b273ffdc00976455dabd"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 753,
+      "sha256": "4b778852ed837144f2bb0c38e6b90bffbb1ed9273308ad16a04a2769006c582e"
+    },
+    {
+      "path": "plugin.json",
+      "bytes": 1248,
+      "sha256": "79c6ffd97de4cc6434fe93c6b5d05db9ce289f3d96811f85d20b912212871b6a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3256,
+      "sha256": "e28a294e8456c6ee02d7e24020c255f851150d33db299c20831741b3c36d8d10"
+    },
+    {
+      "path": "SOURCE.md",
+      "bytes": 747,
+      "sha256": "2304c24c8c1c1ef75ad9d8091752f228f1e64fad73359d028b0919b4c478bbc0"
+    },
+    {
+      "path": "x64dbg-ksword-engine.patch",
+      "bytes": 39312,
+      "sha256": "1147a9d8a6a648326ca0e4bfcd307d5965de8e272315051333f86562a7afc775"
+    },
+    {
+      "path": "licenses/TitanEngine-LICENSE",
+      "bytes": 7816,
+      "sha256": "ea7d049c7705dc13afc202dd18e1827f3484f8212fd3fa7b82fc4a0c363432c9"
+    },
+    {
+      "path": "licenses/x64dbg-LICENSE",
+      "bytes": 36298,
+      "sha256": "1791b618e0aab8312274d6d229e692a680cc633676cd7f87e189f79097951f92"
+    },
+    {
+      "path": "licenses/runtime-dependencies/asmjit-LICENSE.md",
+      "bytes": 858,
+      "sha256": "13870bd53bce53fb9a9bd72e72dcceeffc547c84d9a00d3d4833737a79651828"
+    },
+    {
+      "path": "licenses/runtime-dependencies/asmtk-LICENSE.md",
+      "bytes": 925,
+      "sha256": "d79e47f50caf8dc61c7ea920e364b09a34d303862b4d4752f06789623ef7c1b7"
+    },
+    {
+      "path": "licenses/runtime-dependencies/jansson-LICENSE",
+      "bytes": 1081,
+      "sha256": "edb36167a722baa54bc2e67e0751f27a71c8d36f76882483731e59a03991ec3b"
+    },
+    {
+      "path": "licenses/runtime-dependencies/ldconvert-LICENSE",
+      "bytes": 1063,
+      "sha256": "a522e0ea2c069d71165b041d0362560daede00d90e4607298cd27d27649a5737"
+    },
+    {
+      "path": "licenses/runtime-dependencies/LLVMDemangle-LICENSE.TXT",
+      "bytes": 3192,
+      "sha256": "0303dfeaac87b80d2d1e543aa38d5be77b0eac93c3d04fe7e3c8eaa71a778667"
+    },
+    {
+      "path": "licenses/runtime-dependencies/lz4-LICENSE",
+      "bytes": 1310,
+      "sha256": "cd680953c2d0933069840846381b904ef2c02e4cfe6e40e89c4417876f10b2d2"
+    },
+    {
+      "path": "licenses/runtime-dependencies/NOTICE.md",
+      "bytes": 2002,
+      "sha256": "4157107e2f5aa56f1783dbb09a5730baefd982cfee21d84a3728d010599740a3"
+    },
+    {
+      "path": "licenses/runtime-dependencies/origin_urls.json",
+      "bytes": 7037,
+      "sha256": "a3a23a58b1c31f076b9c95db856e80606834e751e368e5d910c167e182d6858f"
+    },
+    {
+      "path": "licenses/runtime-dependencies/provenance.json",
+      "bytes": 12405,
+      "sha256": "66a191b37549b421bc6d960431b22ed87bf87784393e519ff520fb08148ec6f0"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Scylla-LICENSE",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "licenses/runtime-dependencies/XEDParse-LICENSE",
+      "bytes": 7651,
+      "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Zydis-LICENSE",
+      "bytes": 1122,
+      "sha256": "e5e99718209e94baaf3e9cbf6f64aa3329c9e73c63b1ab47e10f29d81974e6f3"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/LICENSE.FDL",
+      "bytes": 22961,
+      "sha256": "ed8742a95cb9db653a09b050e27ccff5e67ba69c14aa2c3137f2a4e1892f6c0d"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/LICENSE.GPL3",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/LICENSE.LGPL3",
+      "bytes": 7651,
+      "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/android/LICENSE",
+      "bytes": 525,
+      "sha256": "4a51cf7f724f51bedb5fa4f9583a2762f1db8d05e43a577e2487c7aab2fdce18"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/angle/LICENSE",
+      "bytes": 1655,
+      "sha256": "77af9c9fc2710ee66b8282291a9392a9a61f1d5b3ad6e478d0b6c544de5f9aca"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/angle/src/common/third_party/smhasher/LICENSE",
+      "bytes": 1176,
+      "sha256": "3f6f1b520bc53e878ccbb698ad0bacef3752a5f4e4b50a26552bd70f60b40748"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/angle/src/third_party/compiler/LICENSE",
+      "bytes": 1262,
+      "sha256": "a08ba10adec47027ef8078848729837b1c5a42f140718d7afd65c23f1eeec392"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/angle/src/third_party/libXNVCtrl/LICENSE",
+      "bytes": 1158,
+      "sha256": "31346421254a3e6e12687cf17f19f6357ee73a617fa7b3d3ccefdcbabe49bdd3"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/double-conversion/LICENSE",
+      "bytes": 1527,
+      "sha256": "4af93c12062c58058378de2397dc1c92bbff9ddfb1d583a01c84127557ce97ca"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/easing/LICENSE",
+      "bytes": 1505,
+      "sha256": "92fac99458f1754b73edf50f9c9983e0efaa06ad96e2afd5e538c79f45b4b191"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/forkfd/LICENSE",
+      "bytes": 1148,
+      "sha256": "d0d683ae18e78fbef90eb41168fb781920da2d12bf80704490f0882915c18ae0"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/freebsd/LICENSE",
+      "bytes": 1686,
+      "sha256": "dc2caba29eb862f6c1720aecb18e16f4e19d61227ee408be37fb0e9c3d00994f"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/freetype/LICENSE.txt",
+      "bytes": 26377,
+      "sha256": "4f71138144d60a66129064e348532a923e7a45d1f1c863af4c1c13ad74b0b229"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/freetype/docs/LICENSE.TXT",
+      "bytes": 1743,
+      "sha256": "fd056de4196903a676208ef58cfddafc7d583d1f28fa2e44c309cf84a59e62fb"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/gradle/LICENSE-GRADLEW.txt",
+      "bytes": 51625,
+      "sha256": "034f6dc665180948cc53319d6e477a5043b529df992c89d1dcb44f010593fbef"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/harfbuzz/COPYING",
+      "bytes": 1241,
+      "sha256": "ed7c20569a8f7daa06d2032b21bf240c5b6d8a0acb572d775bc6e78e61811191"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/harfbuzz-ng/COPYING",
+      "bytes": 1690,
+      "sha256": "2a886915de4f296cdae5ed67064f86dba01d0c55286d86e8487f2a5caaf40216"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/iaccessible2/LICENSE",
+      "bytes": 1668,
+      "sha256": "603fb8e9a443c95cb56c0e458a0ad17fdcadfc5bbb7e580d2199ee0145882746"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/icc/LICENSE.txt",
+      "bytes": 463,
+      "sha256": "9e34ff47b3a44814e183342e7e198d127a6740e29d20e8381fba7688dafc79dd"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/libjpeg/COPYRIGHT.txt",
+      "bytes": 547,
+      "sha256": "a01b28b0e6563d80289dbd8a98cc472eb84d1c22eb154591565cdf10a9d652b7"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/libjpeg/LICENSE",
+      "bytes": 5213,
+      "sha256": "7d8683a7f048e715e08b4cada8b7f0d9a6ab8afad88ed09c1143ef764ecbc0f2"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/libpng/LICENSE",
+      "bytes": 5345,
+      "sha256": "bf5e22b9dce8464064ae17a48ea1133c3369ac9e1d80ef9e320e5219aa14ea9b"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/pcre2/LICENCE",
+      "bytes": 3456,
+      "sha256": "982293becea3f18eb4e3ce2145f66638e46d105a27b88418766caf321a684d03"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/pcre2/LICENCE-SLJIT",
+      "bytes": 1419,
+      "sha256": "48b7773d240da636ed7be0ec470df49de0665f660bba7cb913403bf90e007fb1"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/pixman/LICENSE",
+      "bytes": 1092,
+      "sha256": "942c4f2a80394d3f53599b8382e9f27349b95c45d92b69b84f26d404f4dd74a5"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/rfc6234/LICENSE",
+      "bytes": 1568,
+      "sha256": "7ccebd514aaabc86192f957d773cebf06577c12fe9f25ecd419c6cac5da7a14c"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/tinycbor/LICENSE",
+      "bytes": 1074,
+      "sha256": "3c6ba0b5bfa7830505301ffb336a17b0748e0d61c4d34216e9dc98f10e40395e"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/wintab/LICENSE.txt",
+      "bytes": 139,
+      "sha256": "c10225ebbd5191bfdd761b0d7752c785f2453ab665d6c454473fb12d254668aa"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/xcb/LICENSE",
+      "bytes": 1246,
+      "sha256": "82775191bc05f85b40404d77bb69b1edeaeb4033f48387e9e5eab4dd67f5d6f1"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/original-third-party/zlib/LICENSE",
+      "bytes": 1465,
+      "sha256": "d7e3139972874dc8abdbbfce27ec1e6f942b28279dd7d27453630a8b4610e080"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/third_party/angle-LICENSE",
+      "bytes": 1655,
+      "sha256": "77af9c9fc2710ee66b8282291a9392a9a61f1d5b3ad6e478d0b6c544de5f9aca"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/third_party/double-conversion-LICENSE",
+      "bytes": 1527,
+      "sha256": "4af93c12062c58058378de2397dc1c92bbff9ddfb1d583a01c84127557ce97ca"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/third_party/freetype-FTL.TXT",
+      "bytes": 6743,
+      "sha256": "08c135755dd589039470f1fdbb400daaabaaa50d0b366d19cebff4d22986baa1"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/third_party/harfbuzz-COPYING",
+      "bytes": 1690,
+      "sha256": "2a886915de4f296cdae5ed67064f86dba01d0c55286d86e8487f2a5caaf40216"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/third_party/libpng-LICENSE",
+      "bytes": 5345,
+      "sha256": "bf5e22b9dce8464064ae17a48ea1133c3369ac9e1d80ef9e320e5219aa14ea9b"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/third_party/libtiff-COPYRIGHT",
+      "bytes": 1146,
+      "sha256": "fbd6fed7938541d2c809c0826225fc85e551fdbfa8732b10f0c87e0847acafd7"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/third_party/libwebp-COPYING",
+      "bytes": 1496,
+      "sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/third_party/libwebp-PATENTS",
+      "bytes": 1436,
+      "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/third_party/pcre2-LICENCE",
+      "bytes": 3456,
+      "sha256": "982293becea3f18eb4e3ce2145f66638e46d105a27b88418766caf321a684d03"
+    },
+    {
+      "path": "licenses/runtime-dependencies/Qt5/third_party/tinycbor-LICENSE",
+      "bytes": 1074,
+      "sha256": "3c6ba0b5bfa7830505301ffb336a17b0748e0d61c4d34216e9dc98f10e40395e"
+    },
+    {
+      "path": "licenses/x64dbg-third-party/DbgEng/LICENSE",
+      "bytes": 1359,
+      "sha256": "36266a8fd073568394cb81cdb2b124f7fdae2c64c1a7ed09db34b4d22efa2951"
+    },
+    {
+      "path": "licenses/x64dbg-third-party/GleeBug/LICENSE",
+      "bytes": 1092,
+      "sha256": "0c633c5f996407872c26c10dc9af5dff3a5ca232d4be1b6c9f1d6f4e88a29ddf"
+    },
+    {
+      "path": "licenses/x64dbg-third-party/TitanEngine/LICENSE",
+      "bytes": 7816,
+      "sha256": "ea7d049c7705dc13afc202dd18e1827f3484f8212fd3fa7b82fc4a0c363432c9"
+    },
+    {
+      "path": "licenses/x64dbg-third-party/TitanEngine/distorm/COPYING",
+      "bytes": 1561,
+      "sha256": "7f19532f8aae6605f524cbc28ee93ecfe72b2d89211a438e8a0795beebbebe6c"
+    },
+    {
+      "path": "payload/x64dbg/.deps_copied",
+      "bytes": 761,
+      "sha256": "1fa4a66df6e105c3f90418353dded3e74a43e93d07a36bb891551baf7bd1c426"
+    },
+    {
+      "path": "payload/x64dbg/.deps_hash",
+      "bytes": 66,
+      "sha256": "3ffaa045333f7605581f3963ab92772987e50ea3ae473362f0d46be640b6ac16"
+    },
+    {
+      "path": "payload/x64dbg/asmjit.dll",
+      "bytes": 342240,
+      "sha256": "4b174ef05228587823cc30c6bd55a1103480b29669e17ada05992116bba22422"
+    },
+    {
+      "path": "payload/x64dbg/D3Dcompiler_47.dll",
+      "bytes": 4173928,
+      "sha256": "e994847e01a6f1e4cbdc5a864616ac262f67ee4f14db194984661a8d927ab7f4"
+    },
+    {
+      "path": "payload/x64dbg/dbghelp.dll",
+      "bytes": 2222016,
+      "sha256": "df29a85fb3f06495792180f74cdfbda2aa9d3172b7797b2c478fb4eb4e5371cc"
+    },
+    {
+      "path": "payload/x64dbg/DeviceNameResolver.dll",
+      "bytes": 76512,
+      "sha256": "c6702029a705fb5db2775f31331b8314566dd84d9702b0c6ff513515c160629c"
+    },
+    {
+      "path": "payload/x64dbg/jansson.dll",
+      "bytes": 150240,
+      "sha256": "eb704b761c638dc9cc4690941dd0de71e4f0575280d41243a5b0d40ebd38f4e8"
+    },
+    {
+      "path": "payload/x64dbg/ldconvert.dll",
+      "bytes": 58080,
+      "sha256": "293539875b478fc2b554104f8c1e0e80a169e75c829a5b882e10b601e6e99744"
+    },
+    {
+      "path": "payload/x64dbg/libEGL.dll",
+      "bytes": 27824,
+      "sha256": "d2a16238e769a4554fc2bcbb50521bdcc92e128b2f2c0b9ad2ed55104d79a3ef"
+    },
+    {
+      "path": "payload/x64dbg/libGLESV2.dll",
+      "bytes": 3578032,
+      "sha256": "ab9da3ae64bc7fd2278324c2fe8802b4cd59fb9930fcc1da541c33fe6da07f02"
+    },
+    {
+      "path": "payload/x64dbg/LLVMDemangle.dll",
+      "bytes": 607480,
+      "sha256": "8de391f11ceeafa007badf71b62560368f8c71623486ff1c2e4c5373fe482834"
+    },
+    {
+      "path": "payload/x64dbg/loaddll.exe",
+      "bytes": 139776,
+      "sha256": "8a6649fb80be41ed3e138f6f4c249ec0a5423ad95c5c8a155f065b717d86fb93"
+    },
+    {
+      "path": "payload/x64dbg/lz4.dll",
+      "bytes": 98528,
+      "sha256": "5cfae56f5319dc343799ac7e9738bc367f9843ce4bf4e795d2ee2ca268fa9c5d"
+    },
+    {
+      "path": "payload/x64dbg/msdia140.dll",
+      "bytes": 2291768,
+      "sha256": "df6bbbfeff8af9c26493a58aab7ee1073f54b5196d72ec0a090bc23c64f751aa"
+    },
+    {
+      "path": "payload/x64dbg/msvcp140.dll",
+      "bytes": 575056,
+      "sha256": "a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde"
+    },
+    {
+      "path": "payload/x64dbg/Qt5Core.dll",
+      "bytes": 5979040,
+      "sha256": "ffe7dd4f3edbf6b87d1855c16b9f9c245cc3bbefb4d032537c5686699f91790c"
+    },
+    {
+      "path": "payload/x64dbg/Qt5Gui.dll",
+      "bytes": 6504624,
+      "sha256": "90b1a7c47965eafcc896b99e9520198c097f60975b74884f1c2bc91a5ce88160"
+    },
+    {
+      "path": "payload/x64dbg/Qt5Svg.dll",
+      "bytes": 344752,
+      "sha256": "c795950ce4a2c34a0973738376118fb2172af588430d5eb8527dd6f0d4ca3d1f"
+    },
+    {
+      "path": "payload/x64dbg/Qt5Widgets.dll",
+      "bytes": 5575856,
+      "sha256": "9e38324e796eb66200498dbfdcda8ac92f92155a9accdc6c97f92f475ea4c8c2"
+    },
+    {
+      "path": "payload/x64dbg/Qt5WinExtras.dll",
+      "bytes": 472752,
+      "sha256": "8891576fb796b8dffa2a02010c7c9977e58e81c767d17bd3e06fd661ddbe0704"
+    },
+    {
+      "path": "payload/x64dbg/Scylla.dll",
+      "bytes": 552672,
+      "sha256": "3a8d0d90b6f1e8e4ccb6c3c84e1755f07775562f4272177eb67ac2f0722af5fa"
+    },
+    {
+      "path": "payload/x64dbg/TitanEngine.dll",
+      "bytes": 415744,
+      "sha256": "0425eb9f75c6efa0a2d355f4e11d4aad8a0a949727d35ad6db6d10398da62826"
+    },
+    {
+      "path": "payload/x64dbg/vcruntime140_1.dll",
+      "bytes": 49640,
+      "sha256": "7dd9aa02e271c68ca6d5f18d651d23a15d7259715af43326578f7dde27f37637"
+    },
+    {
+      "path": "payload/x64dbg/vcruntime140.dll",
+      "bytes": 119888,
+      "sha256": "02c6aa0e6e624411a9f19b0360a7865ab15908e26024510e5c38a9c08362c35a"
+    },
+    {
+      "path": "payload/x64dbg/x64_bridge.dll",
+      "bytes": 21216,
+      "sha256": "31ed3f4d03818dee8aad6a630ddbb6b1ad32ff58b00182dfb4b03f5728ebdfb6"
+    },
+    {
+      "path": "payload/x64dbg/x64_dbg.dll",
+      "bytes": 14048,
+      "sha256": "2b1e0cdc18dd65a23617fb7f75f6f9d3039afe55cd8fa15e18a3419f3aadcc12"
+    },
+    {
+      "path": "payload/x64dbg/x64bridge.dll",
+      "bytes": 83456,
+      "sha256": "cbe7512306424bc3ef957845735df5f475f635631a209aa6c984b8656e3c55f0"
+    },
+    {
+      "path": "payload/x64dbg/x64dbg.dll",
+      "bytes": 2264576,
+      "sha256": "2838c9486fb6f71bbbd94368d118937cb218adb4107aa951c63dbf0e8cae708e"
+    },
+    {
+      "path": "payload/x64dbg/x64dbg.exe",
+      "bytes": 241664,
+      "sha256": "0883d9470428c8bce757ddc02bd088ad8146d27d0cc5c5258c0d4b5aedc16895"
+    },
+    {
+      "path": "payload/x64dbg/x64gui.dll",
+      "bytes": 4455936,
+      "sha256": "e97b7285d314664323c559fc20e72394b590c7458684f6397306bf9e0608ca48"
+    },
+    {
+      "path": "payload/x64dbg/XEDParse.dll",
+      "bytes": 1421024,
+      "sha256": "7237ace651d8ae8e3285c9a0256bf34d50e7a4c9722ce016bbcf74e80c3071d6"
+    },
+    {
+      "path": "payload/x64dbg/DbgEng/dbgcore.dll",
+      "bytes": 239512,
+      "sha256": "705df332e15b5d9b3d1df09ab1f0e789e34d8e8bcdce934b3543b47577ed3368"
+    },
+    {
+      "path": "payload/x64dbg/DbgEng/dbgeng.dll",
+      "bytes": 9389960,
+      "sha256": "adfc25cc0ff57fcd1618af7483201b51bd6cbc25523ba8bc6eebb9e2d6abbc5a"
+    },
+    {
+      "path": "payload/x64dbg/DbgEng/dbghelp.dll",
+      "bytes": 2222016,
+      "sha256": "df29a85fb3f06495792180f74cdfbda2aa9d3172b7797b2c478fb4eb4e5371cc"
+    },
+    {
+      "path": "payload/x64dbg/DbgEng/dbgmodel.dll",
+      "bytes": 1161112,
+      "sha256": "1f49556d7671785984af11efef0b0cd1b186839189cc8742d671e9805f5b3b54"
+    },
+    {
+      "path": "payload/x64dbg/DbgEng/TitanEngine.dll",
+      "bytes": 628224,
+      "sha256": "bc7f7e2403ddf6beb87fb361a5058c49a5e2275821a24944ab9c873cda6ae69a"
+    },
+    {
+      "path": "payload/x64dbg/DbgEng/TTDReplay.dll",
+      "bytes": 1169208,
+      "sha256": "71fa5c11a8c482661eb29311481ca6819cc43aecb27bf2194250f7679f03cf8f"
+    },
+    {
+      "path": "payload/x64dbg/DbgEng/TTDReplayCPU.dll",
+      "bytes": 3491640,
+      "sha256": "661cd1a882d157932c634b3807dd360e08997c0b0812e2585adb2628041e957e"
+    },
+    {
+      "path": "payload/x64dbg/GleeBug/TitanEngine.dll",
+      "bytes": 685056,
+      "sha256": "ed9bb55fdcf22f162f4b1ab45732eceda807944c0a5964236f937abbe088fa66"
+    },
+    {
+      "path": "payload/x64dbg/iconengines/qsvgicon.dll",
+      "bytes": 45744,
+      "sha256": "d651ad610745fcc04f53d148bf1f592894688d9a8db2a4c6c0f7886a77a31df5"
+    },
+    {
+      "path": "payload/x64dbg/imageformats/qgif.dll",
+      "bytes": 41648,
+      "sha256": "eb52fb17a02f760565236987909c23c905baf2d0cdb876a13791edada6c563e1"
+    },
+    {
+      "path": "payload/x64dbg/imageformats/qicns.dll",
+      "bytes": 50864,
+      "sha256": "40c3798b27811fc27a1cbfba4c60bf32491c98c9ae2bca973ce3fcd2e11124bc"
+    },
+    {
+      "path": "payload/x64dbg/imageformats/qico.dll",
+      "bytes": 42160,
+      "sha256": "5f77bdc72e5024cd8cca51ca1905a8d77cce99399ae7a0686d98abd3df5eb455"
+    },
+    {
+      "path": "payload/x64dbg/imageformats/qjpeg.dll",
+      "bytes": 458416,
+      "sha256": "b6f871cb7e0c859af7004ded62764362e91acc536c8b37cce16ebe3502761e81"
+    },
+    {
+      "path": "payload/x64dbg/imageformats/qsvg.dll",
+      "bytes": 34992,
+      "sha256": "6c1c18d3ee7234eb0c773130bf5ae2c4bb7e3a4534a84208faaed94f51cd16b3"
+    },
+    {
+      "path": "payload/x64dbg/imageformats/qtga.dll",
+      "bytes": 34480,
+      "sha256": "d01376aa70bff757dd60aa25b5ac38e246baa77a6b80d1a91c0fa12e930f9507"
+    },
+    {
+      "path": "payload/x64dbg/imageformats/qtiff.dll",
+      "bytes": 398512,
+      "sha256": "4bc4e6773327264bd760da6030014da750ab27e2e1df69cec9e6804c593bc37e"
+    },
+    {
+      "path": "payload/x64dbg/imageformats/qwbmp.dll",
+      "bytes": 33456,
+      "sha256": "9bb6e2ecf0ec33efdc827a148dee3f46a11e735638b679067cc67a230d8ae3a6"
+    },
+    {
+      "path": "payload/x64dbg/imageformats/qwebp.dll",
+      "bytes": 530608,
+      "sha256": "f345f43ce85f612269c026d9da52a788e118ef8a73d8e328e07941cbff6bdc25"
+    },
+    {
+      "path": "payload/x64dbg/KSword/TitanEngine.dll",
+      "bytes": 449536,
+      "sha256": "f414dc06512855f65de50e5aefb88182502e40b952bc1ccb9705920539d1ab83"
+    },
+    {
+      "path": "payload/x64dbg/platforms/qwindows.dll",
+      "bytes": 1473200,
+      "sha256": "1fa4d2f13d22d9a859503d7b7c87ba39d379d9a14afcea7299d572eabb2bdf57"
+    },
+    {
+      "path": "payload/x64dbg/StaticEngine/TitanEngine.dll",
+      "bytes": 565248,
+      "sha256": "2d15828b70e2a694006f2e81462c88e1ab33b1f3cbcd70a0258b116d61d47488"
+    },
+    {
+      "path": "payload/x64dbg/styles/qwindowsvistastyle.dll",
+      "bytes": 145584,
+      "sha256": "59f3183245e4ea6a93f04eb3dc7460b3911397cb5a9f7aa429921b7957b62684"
+    }
+  ]
+}

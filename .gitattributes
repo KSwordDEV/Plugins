@@ -1,0 +1,3 @@
+# Preserve published package bytes and runtime manifest hashes.
+ARK/Cheat-Engine/** -text
+ARK/x96dbg/** -text
