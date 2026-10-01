@@ -20,18 +20,18 @@
     {
       "id": "cheat-engine",
       "name": "Cheat Engine（KSword 后端）",
-      "version": "2.0.0",
-      "description": "Runs 64-bit Cheat Engine in its own window with a reusable KSword memory/debugger backend, the complete current HVM protocol API, EPT breakpoint integration, and a themed KSword log Tab with an HVM switch.",
+      "version": "2.1.0",
+      "description": "Runs standalone 64-bit Cheat Engine with a reusable KSword backend, configurable Shadow execution-page writes, explicit data fallback diagnostics, and a themed control/log Tab with persistent HVM options.",
       "targets": [
         "process",
         "tab"
       ],
       "repository_path": "ARK/Cheat-Engine",
       "install_directory": "cheat-engine",
-      "archive_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/33c0346a51ea88afe62df9b92f3d406d2267b09b/ARK/Cheat-Engine/Cheat-Engine.zip",
-      "sha256": "18875AED790AF4BFD386C1A46F6DA4B722C13BF8DF099E2D86FEA5468F4E678E",
+      "archive_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/31577beb01d90bfaa9f3bb874b38c5956434ec2a/ARK/Cheat-Engine/Cheat-Engine.zip",
+      "sha256": "083271C03C7AE6D3A0461356BB45D14F60C23F88A40B58C9A25AD4A884FBF83E",
       "license_name": "KSword Community Source License v1.6; bundled components retain their original licenses",
-      "license_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/33c0346a51ea88afe62df9b92f3d406d2267b09b/ARK/Cheat-Engine/LICENSE.txt"
+      "license_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/31577beb01d90bfaa9f3bb874b38c5956434ec2a/ARK/Cheat-Engine/LICENSE.txt"
     },
     {
       "id": "ndpi-network-inspector",
@@ -66,18 +66,18 @@
     {
       "id": "x96dbg",
       "name": "x96dbg（KSword 后端）",
-      "version": "1.0.0",
-      "description": "Starts standalone 64-bit x64dbg with the canonical TitanEngine KSword adapter and a themed KSword control/log Tab. Native forwarding is usable without the KSword driver.",
+      "version": "1.1.0",
+      "description": "Starts standalone 64-bit x64dbg with the canonical TitanEngine KSword adapter, selectable normal/stealth HVM policy, explicit fallback diagnostics, and persistent control/log Tab options.",
       "targets": [
         "process",
         "tab"
       ],
       "repository_path": "ARK/x96dbg",
       "install_directory": "x96dbg",
-      "archive_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/33c0346a51ea88afe62df9b92f3d406d2267b09b/ARK/x96dbg/x96dbg.zip",
-      "sha256": "D6FF1F5FC818DE1F1B6FA7731F19DFCDC5A405862D8D72565C6D52C4548E081C",
+      "archive_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/31577beb01d90bfaa9f3bb874b38c5956434ec2a/ARK/x96dbg/x96dbg.zip",
+      "sha256": "9C7CD0F3053F3BF27E4AFB9DC15717B954DCB9A0BD1EC6DB9D59483705922AB0",
       "license_name": "KSword Community Source License v1.6; bundled components retain their original licenses",
-      "license_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/33c0346a51ea88afe62df9b92f3d406d2267b09b/ARK/x96dbg/LICENSE.txt"
+      "license_url": "https://raw.githubusercontent.com/KSwordDEV/Plugins/31577beb01d90bfaa9f3bb874b38c5956434ec2a/ARK/x96dbg/LICENSE.txt"
     }
   ]
 }
